@@ -1,37 +1,37 @@
-This repository tracks patches needed to build VMware (Player and
-Workstation) host modules against recent kernels. As it focuses on recent
-kernels (older ones do not need patching), only vmmon and vmnet modules are
-currently handled as the rest has been upstreamed for some time.
+Ce référentiel suit les correctifs nécessaires à la création de VMware (Player et
+Workstation) hébergent des modules sur des noyaux récents. Comme il se concentre sur les récentes
+noyaux (les plus anciens n'ont pas besoin de correctifs), seuls les modules vmmon et vmnet sont
+actuellement traité car le reste a été amont depuis un certain temps.
 
-Main branch master handles only "infrastructure" files which do not belong
-to VMware module sources. Two other branches, "player" and "workstation"
-track upstream module sources distributed with Player and Workstation,
-respectively. Tags of the form "p${version}" (e.g.  "p12.5.5") and
-"w${version}" correspond to clean unpacked sources of modules from
-a particular version of Player or Workstation.
+Le maître de la branche principale gère uniquement les fichiers "infrastructure" qui n'appartiennent pas
+aux sources des modules VMware. Deux autres branches, "player" et "workstation"
+suivre les sources des modules en amont distribués avec Player et Workstation,
+respectivement. Balises de la forme "p${version}" (par exemple "p12.5.5") et
+"w${version}" correspondent aux sources propres et décompressées des modules de
+une version particulière de Player ou Workstation.
 
-From these tags, branches "workstation-${version}" is forked. This branch
-tracks changes needed to build the modules against recent kernel versions.
-In general, one should always use current branch head for the build. For
-versions before 17.0, there are also branches "player-${version}" but as
-the module sources have been identical between Workstation and Player for
-quite long, there seems to be no need to duplicate the work. Therefore the
-"workstation-*" branches should be also used for Player >= 17.0 (and can be
-in fact used for older as well). If the situation changes in the future,
-Player related branches can be introduced again.
+À partir de ces balises, les branches "workstation-${version}" sont dérivées. Cette branche
+suit les modifications nécessaires pour construire les modules par rapport aux versions récentes du noyau.
+En général, il faut toujours utiliser le chef de branche actuel pour la construction. Pour
+versions antérieures à 17.0, il existe aussi des branches "player-${version}" mais comme
+les sources des modules sont identiques entre Workstation et Player depuis
+assez long, il ne semble pas nécessaire de dupliquer le travail. Par conséquent, la
+Les branches "workstation-*" doivent également être utilisées pour Player >= 17.0 (et peuvent être
+en fait utilisé également pour les plus âgés). Si la situation change à l'avenir,
+Les branches liées aux joueurs peuvent être réintroduites.
 
-In the past, tags in the form "w${ver}-k${ver}" and "p${ver}-k${kver}" were
-also provided to mark the snapshots deemed sufficient to build modules for
-Workstation/Player version $ver at the moment of kernel $kver release. This
-practice turned to be a bad idea; more often an issue affecting older
-kernel versions was discovered later than a fix for newer kernel did not
-work with older ones. Unfortunately, misinterpreting these tags often
-resulted in building modules from old branch snapshots and reporting issues
-that have been addressed long ago. Therefore, starting with kernel 6.0,
-these per kernel tags are no longer going to be provided.
+Dans le passé, les balises au format "w${ver}-k${ver}" et "p${ver}-k${kver}" étaient
+également prévu pour marquer les instantanés jugés suffisants pour construire des modules pour
+Version de la station de travail/du lecteur $ver au moment de la sortie du noyau $kver. Ce
+la pratique s’est avérée être une mauvaise idée ; le plus souvent, un problème affectant les personnes âgées
+les versions du noyau ont été découvertes plus tard qu'un correctif pour un noyau plus récent n'a pas été trouvé
+travailler avec les plus âgés. Malheureusement, il est fréquent de mal interpréter ces balises
+a abouti à la création de modules à partir d'anciens instantanés de branche et à la création de rapports sur les problèmes
+qui ont été abordés il y a longtemps. Par conséquent, à partir du noyau 6.0,
+ces balises par noyau ne seront plus fournies.
 
-At the moment, changes are tested to build against all (vanilla) kernel
-releases starting with 4.9.
+Pour le moment, les modifications sont testées pour s'appuyer sur tous les noyaux (vanille)
+versions commençant par 4.9.
 
-This repository is provided "as is" with no guarantees. Use the contents on
-your own risk.
+Ce référentiel est fourni « tel quel » sans aucune garantie. Utilisez le contenu sur
+à vos propres risques.
