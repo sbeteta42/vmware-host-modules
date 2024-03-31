@@ -1,14 +1,9 @@
-Ce référentiel suit les correctifs nécessaires à la création de VMware (Player et
-Workstation) hébergent des modules sur des noyaux récents. Comme il se concentre sur les récentes
-noyaux (les plus anciens n'ont pas besoin de correctifs), seuls les modules vmmon et vmnet sont
-actuellement traité car le reste a été amont depuis un certain temps.
+- Ce référentiel suit les correctifs nécessaires à la création de VMware (Player et Workstation) hébergent des modules sur des noyaux récents. 
+- Comme il se concentre sur les récentes noyaux (les plus anciens n'ont pas besoin de correctifs).
+- Seuls les modules vmmon et vmnet sont actuellement traité car le reste a été amont depuis un certain temps.
 
-Le maître de la branche principale gère uniquement les fichiers "infrastructure" qui n'appartiennent pas
-aux sources des modules VMware. Deux autres branches, "player" et "workstation"
-suivre les sources des modules en amont distribués avec Player et Workstation,
-respectivement. Balises de la forme "p${version}" (par exemple "p12.5.5") et
-"w${version}" correspondent aux sources propres et décompressées des modules de
-une version particulière de Player ou Workstation.
+- Le master de la branche principale gère uniquement les fichiers "infrastructure" qui n'appartiennent pas aux sources des modules VMware. Deux autres branches, "player" et "workstation" suivre les sources des modules en amont distribués avec Player et Workstation,
+respectivement. Balises de la forme "p${version}" (par exemple "p12.5.5") et "w${version}" correspondent aux sources propres et décompressées des modules de une version particulière de Player ou Workstation.
 
 À partir de ces balises, les branches "workstation-${version}" sont dérivées. Cette branche
 suit les modifications nécessaires pour construire les modules par rapport aux versions récentes du noyau.
